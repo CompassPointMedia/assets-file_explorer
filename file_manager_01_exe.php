@@ -189,8 +189,6 @@ switch(true){
 		}
 		if($passedNode)$node=$passedNode;
 
-
-
 		if(!isset($runJavascript))$runJavascript=true;
 		if(!is_uploaded_file($_FILES['uploadFile1']['tmp_name']))error_alert('Error loading file');
 
