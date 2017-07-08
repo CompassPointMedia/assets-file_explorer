@@ -1,0 +1,33 @@
+.menuskin1 {
+	width:150px;
+	padding:1px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	visibility:hidden;
+	text-align:left;
+	background-color:menu;
+	/*
+	border:1px solid buttonface;
+	border:2px outset buttonhighlight;
+	*/
+	border:1px solid #333;
+	cursor:default;
+	background-image:url('/admin/file_explorer/i/vert1.gif');
+	background-repeat:repeat-y;
+}
+.menuitems {
+	padding:4px 5px 2px 28px;
+	font-family:Tahoma, Verdana, Arial;
+	font-size:12px;
+}
+.mhr{
+	/* padding:-5px; */
+	margin:4px 7px 2px 28px;
+}
+.menudefault{
+	font-weight:900;
+	}
+.mndis{
+	color:#AAA;
+	}

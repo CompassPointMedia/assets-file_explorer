@@ -1,0 +1,316 @@
+html{
+	height: 100%;
+	}
+body{
+	height: 100%; 
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px;
+	}
+th{
+	text-align:left;
+	}
+.tar{
+	text-align:right;
+	}
+img{
+	border:none;
+	}
+#contentWrap{
+	height:100%;
+	margin:0px auto;
+	}
+#topRegion{
+	/* 
+1	min-height:30%;
+	*/
+	height:80px;
+	}
+#FileSystemFocus_1_1{
+	/*
+	height must be less percentage-wise if we include the select toolbar at bottom
+	*/
+	height:80%;
+	overflow:auto;
+	margin:0px 10px;
+	border:1px solid #CCC;
+	clear:both;
+	}
+#bottomBar{
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size:12px;
+	position:fixed;
+	width:100%;
+	bottom:0;
+	right:0;
+	background-color:darkblue;
+	color:white;
+	}
+#bottomBar form{
+	display:block;
+	padding:5px 10px;
+	}
+#verBlock{
+	float:right;
+	background-color:DARKKHAKI;
+	color:#FFF;
+	padding:2px 6px;
+	}
+#foldersStats1{
+	}
+#filesStats1{
+	}
+#uploadFile1{
+	width:115px;
+	}
+#js_tester{
+	 display:none;
+	 background-color:ALICEBLUE;
+	 border:1px solid #000000;
+	 padding: 5px;
+	}
+#js_show{
+	width:5px;
+	height:5px;
+	cursor:pointer;
+	background-color:#CCC;
+	}
+input.i1{
+	border:1px solid #333;
+	width:75%;
+	}
+.tw{
+	border:1px solid #CCC;
+	}
+
+/** ------------ thumbnails view css ------------ **/
+.vwT{
+	float:left;
+	width:115px;
+	height:150px;
+	overflow:hidden;
+	text-align:center;
+	margin:8px 8px;
+	cursor:pointer;
+	}
+.thumbnailsBox{
+	/** default settings for box in thumbnails view **/
+	border:1px solid #AAA;
+	padding:4px;
+	width:100px;
+	height:100px;
+	margin-bottom:3px;
+	}
+.thumbnailsBoxHL{
+	border:3px solid DARKBLUE;
+	padding:2px;
+	margin-bottom:3px;
+	width:100px;
+	height:100px;
+	}
+.thumbnailsBg{
+	width:97px;
+	height:97px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	}
+.thumbnailsBox2{
+	background-color:#FFF;
+	color:#000;
+	}
+.thumbnailsBox2HL{
+	background-color:DARKBLUE;
+	color:#FFF;
+	}
+.imgStatsBalloon{
+	padding:0px 4px;
+	color:white;
+	position:absolute;
+	left:0px;
+	top:0px;
+	-moz-opacity:.50;
+	filter:alpha(opacity=50);
+	opacity:.50;
+	font-size:11px;
+	}
+/** ------------ full folder view css ------------ **/
+.vwF{
+	float:left;
+	border:1px dotted #999;
+	padding:15px;
+	margin:12px 0px 0px 12px;
+	text-align:center;
+	cursor:pointer;
+	position:relative;
+	}
+.fullfolderBox{
+	padding:4px;
+	}
+.fullfolderBoxHL{
+	border:1px solid DARKBLUE;
+	padding:3px;
+	}
+.fullfolderBox2{
+	background-color:#FFF;
+	color:#000;
+	}
+.fullfolderBox2HL{
+	background-color:DARKBLUE;
+	color:#FFF;
+	}
+.nameBox{
+	max-width:250px;
+	background-color:transparent;
+	}
+.nameBoxHL{
+	max-width:250px;
+	background-color:DARKBLUE;
+	color:#FFF;
+	}
+#filesFoldersStats1{
+	display:none;
+	color:#FFF;
+	padding:2px 6px;
+	float:right;
+	width:200px;
+	background-color:green;
+	}
+
+
+.cut{
+	-moz-opacity:.50;
+	filter:alpha(opacity=50);
+	opacity:.50;
+	border-color:#000;
+	}
+
+
+
+/* --------- view options gadget CSS ------------- */
+#viewGadget{
+	position:relative;
+	float:left;
+	}
+#viewButton{
+	cursor:pointer;
+	/*position:relative;*/
+	}
+#viewMain{
+	visibility:hidden;
+	position:absolute;
+	z-index:25;
+	left:-10px;
+	width:195px;
+	margin-top:1px;
+	border:1px solid #555;
+	background-color:#FFF;
+	}
+.viewOptionsOff{
+	background-color:none;
+	}
+.viewOptionsOn{
+	background-color:darkblue;
+	color:white;
+	}
+.vg{
+	cursor:pointer;
+	padding:0px 0px 1px 8px;
+	}
+
+
+
+
+
+.fexImg{
+	margin-top:25px;
+	}
+#boxDims{
+	/* background-color:TOMATO; */
+	padding:0px 4px;
+	}
+
+
+
+
+img.ghost{
+	-moz-opacity:.50;
+	filter:alpha(opacity=50);
+	opacity:.50;
+	}
+img.noghost{
+	-moz-opacity:1.00;
+	filter:alpha(opacity=100);
+	opacity:1.0;
+	}
+input.ghost{
+	color:#CCC;
+	}
+input.noghost{
+	color:#000;
+	}
+	
+/* -------- RootTools toolbar --------- */
+#RootTools{
+	}
+#RootTools .primaryData{
+	background-image:url("/i/bg-horizyellowgrad.gif");
+	background-repeat:repeat-y;
+	padding:3px 0px 1px 12px;
+	}
+#RootTools .primaryToolbar{
+	clear:both;
+	background-color:#E6e6b3;
+	border-bottom:1px solid #444;
+	padding:3px 12px 1px 12px;
+	}
+#upFolderAnchor{
+	cursor:pointer;
+	}
+#fullPath a{
+	color:SADDLEBROWN;
+	}
+.dividerslash{
+	font-size:93%;
+	padding:0px 2px;
+	}
+#currentFolderLabel{
+	font-size:119%;
+	font-weight:900;
+	}
+.imgIcon{
+	float:left;
+	cursor:pointer;
+	}
+
+/* -------------- details view component ----------- */
+.details{
+	width:100%;
+	}
+.details th{
+	border-bottom:1px solid #ccc;
+	background-color:papayawhip;
+	padding:3px 2px 1px 4px;
+	}
+.details td{
+	border-bottom:1px dotted #ccc;
+	padding:3px 2px 1px 4px;
+	cursor:pointer;
+	vertical-align:bottom;
+	}
+.details tbody{
+	overflow-y:scroll;
+	overflow-x:hidden;
+	height:350px;
+	}
+.details td{
+	background-color:#ededed;
+	}
+.details .on td{
+	background-color:#a8c6ed;
+	color:white;
+	}
+.details .size{
+	background-color:papayawhip;
+	border-right:1px dotted #ccc;
+	}

@@ -1,0 +1,55 @@
+Technical
+--------------------------------
+2006-06-17:
+This is meant to explore a treed file system.  I want to use this as an opportunity to show features that Windows never cared to do, such as copy multiple, merge and compare folders, etc..  Also an operation will have a daemon which will allow you to "back up" or "restart" it.
+
+This is eventually intended to go into RelateBase but the idea of installing it anywhere and then just changing a few settings is a great one also.  This program will "give away the farm" however so I must be careful about distribution.  Here's one case where some legal protection *might* be appropriate but I never cared for that route.
+
+Now for the technical stuff.  The window itself is an instance and requires a unique name or UID; to be able to use a "back" button call to the server (green arrows in WEx), we need to know back for which one of course.  Below this, WEx has four Explorer Bar "modes", Folders, History, Favorites and Search.  The main mode for the window (in my understanding) is the Folders "mode", the others are just GUI's to present the data in a specific way more helpful to the user.  With WEx, you only have one of these Explorer Bars present in a window.  To the right, and not able to be collapsed, is the View, which has different configurations.  The view is linked to the Explorer Bar dynamically.
+
+Here is where we could get really wild:
+1. allow for multiple explorer bars
+2. allow for multiple views as children of (each) explorer bar
+3. allow the view to be split to further break down to the individual file properties or even to view the file in situ.
+
+This could allow for drag-drops and comparisons, and merges between folders; it could also allow for creative tools in the toolbar above.
+
+Naming conventions for objects on the page
+------------------------------------------
+The Explorer Bar (ExBar) will be id'd as FileSystemRoot_1 at this point, with _2, _3 maybe in the future.
+In the tag will be mode="Folders", with other modes History, Favorites and Search when they are developed.[1]
+The View Panel will be id'd FileSystemFocus_1_1, declaring its dependency to the FSRoot_1 object, with _1_2, _1_3 etc. meaning additional focus Objects
+The tool bar at top will be id'd as RootTools, and I see no reason to split this up currently.  If the program has sub-toolbars they will be RootTools_{ToolName} where ToolName is a variable.
+Unline WEx, my feature needs a "waiting" icon and text in a helpful position.  This will be id'd as Waiting, with sub ids of WaitingStatus (text) and WaitingIcon (graphic)
+
+
+States of the objects
+---------------------
+
+/**** NOTES
+there are several things I want to have available in the window:
+	full path
+	current folder (things in RB are folders, but different types and sometimes with rules)
+	current folder ID (all folders have ids)
+for now, the only two things which are necessary are the first two, but they are both equally necessary.  I can get away with storing them as strings for now, and the second one is determinable by the first one.
+
+Also, what is above the folder path? we need a variable for that; right now it's a path from a server, whereas it could be a path from any server anywhere, or some other URL/URI.  Take the case of history in the Explorer Bar.  The history is a computer-based object, but the links are web-based.
+
+****/
+
+
+
+
+
+
+----------
+[1] At this point I'm committing that the other "modes" of the FSR will still have the same id and this is the most appropriate approach.
+
+
+Iframe functionality:
+------------------
+w1: handles refresh of folders
+w2: handles uploads of files
+w3: handles deletes
+w4: handles zip downloads - anything that has a content-disposition of a download goes here
+w5: handles email problems

@@ -1,0 +1,266 @@
+2012-03-20
+----------
+* deleted PBS code from file_manager_01_exe.php, mode=loadFolder
+* added js variable disposition (=selector) in calls to loadFolder
+* saved a cookie of lastnode = node selected; when in selector disposition, FEX redirects to this node. 
+
+
+2010-11-09
+----------
+* status "Unable to create system folder .thumbs.dbr" is no longer a fatal error
+2012-04-16 - version 1.1.10
+----------
+* added leftnav.php which will eventually become a true left nav - but a good folder reader!
+2010-06-11 - version 1.1.00
+----------
+* biggest issue is that FEX no longer works as a symbolic folder application but the good news is that the new file aphack.php, combined with a .htaccess file in the "real" file_explorer folder should work OK.  I am configuring that right now.  Other goals are:
+	- image editing
+	- database integration
+	- context menu improvement (use of config.file_explorer.php)
+	- password protection and tunneling
+* changed all require() refs to absolute roots
+* changed all images/i/fex104 folder refs to /images/i/fex104 (absolute)
+
+
+2010-03-09
+----------
+* added try-catch in general_v100.js around hiding options.  in context of future customer add-ons this is probably best
+
+2010-03-04
+----------
+* added variable $FEXOverrideFileArray - if true && files is an array (even if blank), then FEX will not get the files from that node
+
+2009-09-13
+----------
+* moved more css out of pages to simple_100
+* implemented creation of .thumbs.dbr/{mini-48x48} folder
+* set miniViewWidth|Height var as 48
+
+2009-09-12
+----------
+(on 1.0.50)
+* removed div subContainer as not needed
+* modified hi2() to handle table details view - using classNames
+* added details view
+
+(on 1.0.40)
+* for .cut class added generic opacity:.5; (new Moz not respecting -moz-opacity anymore?)
+* on successful rename of an object, replaced the FORM, not just the innerHTML of the form
+
+2009-04-12
+----------
+* fixed a few oversights on uploading a new image
+* switch views was not changing value of the hidden field view
+* moved code around on mode=uploadFile; uploading image with same name as existing will now properly replace the image, but the display is buggy and sometimes the browser itself is holding onto the old image
+
+v1.0.40 - 2009-03-31
+----------
+* removed reference to javascript var folder, and just used g('folder').value
+* added refresh folder link
+* tweaked the sizing of images in the yellow and red area
+
+2009-03-17
+----------
+* so config.php can be included, only started session if not already started
+* changed location of images and icons to /images/i/fex104
+* developed a code snippet which would allow remote calling of FEX - but
+	- I can specify the list of files AND the folders - allows FEX to break folder boundaries.  This is done by the $files array containing the $node declaration to override the current $node
+	- I can override the javascript events for the nodes by use of $customOn(click|dblclick|contextmenu) - these can be declared as blank as well
+* did a hack so you can upload files in IE (yuck, lots of layer issues here)
+
+2009-03-13
+----------
+* removed reference to comp_001 and comp_004 (thumbs and fullfolder)
+* archived full,layout, and popup.php, removed function oB()
+* removed setCtrl from hi2() - not used
+* work on disposition=selector, galvanized by DAC needs
+	* 2009-03-16 SUCCESS
+		got it to return values OK with this string
+		?uid=getfiles&cbTarget=newfile&cbTargetExt=newfileext&cbTargetNode=newfiledir&cbFunction=loadNewFile
+		[note call of cbFunction is not like callback(), no way to pass params]
+
+v1.0.30 - 2009-01-22
+-------
+boxing is not finished yet! but it's close and I'm now working on callback selection which was inconsistent with the latest callback functions previously.  With this we won't (or at all) do wpo, but instead just wo upon select though we may float searching for a file.
+* moved static js to the .js file
+* removed old non-used HTML
+* changed to disposition=selector to show bottomBar
+* revised CSS so viewport flows better (still doesn't look that great)
+
+todo
+----
+get the filesFoldersStatusBar back!
+DONE	clean up bottomBar appearance
+DONE	have it pass back the file and folder
+DONE	upfolder and navfolder must clear out selector fields
+DONE	for now clear up file/folder return when folder changes
+DONE	have cbSelectorExt values mirror cbSelector
+DONE	use this: [^'$A-Za-z_0-9]folder[^'$A-Za-z_0-9] to remove the global var folder and just use the hidden field
+
+hijack the function of the double-click elegantly
+clean up bottomBar appearance
+	dkblue = shock: change appearance; match tan or theme; have Josh look at and improve
+	need titleOverride for custom titles
+	otherwise "Select File(s)" <-based on multiple   "Save as"
+	gradient would be nice
+	input field text needs to be smaller and matching the theme of the other items
+	name and files of type need to line up
+	stop wrapping from happening
+	consider a no-resize option on ow()
+allow or forbid select multiple
+filter implementation:
+---------------------
+	filter[]=expression&filter[]=known_constant
+	what we want are files that start with LCR100_
+	select all files reloads with open filter
+	entering *.jpg b/c of the * loads with that filter
+	text above for what the filter is if recognized
+	entering .. goes to parent folder if possible
+	entering folder name loads a folder
+	entering unknown causes error
+	etc. etc. 
+prefix
+------
+	we want files to be prefixed LCR100_ on upload
+
+
+2009-03-11
+----------
+* more work on bounding box - now shows if bounding box present, can be cleared - but the result is not user-friendly
+* changed file viewport to overflow:auto - scrollbars if needed only
+
+2009-02-20
+----------
+* modified is_boxed() function - but still not ready
+* modified method of including a file - in practice we should be able to require any FEX file from anywhere, and that file's includes will also be true to path
+* on mode uploadFile and uploadFileAPI, introducted $nameAs and $targetFileName - so that we can upload the file as a new file
+* allowed for array limitLoadableFileExtensions - will choke down the loadableFileExtensions array to these extensions
+
+2009-02-14
+----------
+* double-click now calls edc() (execute default command) vs. ooF() - so double-clicking is entirely dependent now on the context menus' interpretation of what happens based on the file's type or the browser configuration or etc.
+* NOTE: .doc and .xls files download, not view, where in IE they could normally be viewed, so this is a limitation
+* Download to Computer feature now working
+
+2009-02-13
+----------
+* completely reconfigured the context menus see http://dev.compasspointmedia.com/mediawiki-1.13.2/index.php?title=Context_Menus for docs on this.  This is the step I've been wanting to do for some time; it allows a given context menu to be altered based on the extension of the file or the group it's in.  Main items it allows for:
+	- bold the default command and var it for doubleclicking vs. context menu selection
+	- hide irrelevant options for any extension group
+* fixed some css issues on the context menu including declaring .mndis{ color:#AAA; } (it was never declared!), and made the context menu cleaner.  A png image would work on an option nicely now
+* altered the context menu options themselves to allow for more versatility - and I prepared for the options of sending an email and opening an FTP manager
+* For now, hid Cut more and Copy more - they were not being used and there are other priorities
+* I GET AN EMAIL NOTIFICATION WHEN CONTEXT IS REQUESTED FOR AN UNMAPPED EXTENSION (e.g. psd)
+* added use of $testing paramter
+	- make the viewport for files shorter
+	- show tester
+	- show Cut more and Copy more
+* moved it into general production
+
+2009-02-09
+----------
+* introduced cm_bubblethrough var for contextmenus_04_i1.js (in _test.js file) - allowed for right-clicking over the object NAME and having it show
+* radically improved changed the rename process
+* $uid was set globally in config.php and I removed it; now $uid is only set in index.php and must be passed or the exe page will email me.  ALL REQUESTS MUST HAVE A UID
+
+
+todo
+----
+areas -> resizings
+icons for doc xls pdf files
+
+v1.0.30 - 2009-01-22
+-------
+main goal is to finish off the boxing and permanency, update the context menus, and handle iconic representation of non-images - and maybe extend the API-ness of the exe file - also universalize the "i" folder but wait for a graphic designer to assist me on this
+	bounding box working
+	emails in place
+	menu to edit and layout bugs on rename etc.
+	notes and instructions on folders ^ overflow:hidden :)
+	know [what] is in a folder incl. nothing	
+	open=focus window - do this better with stats and etc.
+
+	* deleted Library/css/contextmenu_v110.css
+	* moved simple_100.css and contextmenu_v400.css to Library root (so CSS folder can be symbolic in future)
+	* didn't carry over old archive and archive.old folders - started clean
+	* removed or changed old functions
+		fs_dir_size seems useful but wasn't referenced; moved to functions.old
+		array_multisort_2d seems useful but wasn't referenced and may be used again soon
+	* moved session_start() and require('file_manager_00_includes.php') to config.php; also $qx['defCnxMethod']
+	* added new array $fexSettings with first node:
+		hideKnownExtensions - self-explanatory; if true files will not show extensions
+	* config.php: commented out vars (see 2009-02-08)
+	* config.php: moved a few things around priority-wise
+	* better title entry (cpm004 for example)
+	* updated comp_001 and comp_004 into comp_006 to prevent redundancy
+	
+
+v1.0.00 - 2008-09-19
+-------
+this is the first major revision where I'm going to tackle the following main issues
+	* use of this fileset as an API
+	* contextual context menus and icons for non-images
+	* editing tools for humans :) - but which can also be used as an API interface with other aps
+	* making all the menu options mean something including and esp. properties
+	* implementation of user-harmonious concepts in  the uploading and managing of images
+actual changes
+	*	removed old coding in index.php
+	* changed doctype to TRANSITIONAL - to match my other sites
+	
+
+v0.9.43 - 2008-05-07
+-------
+added ability to comply with boxed folder on upload
+fixed bug with UID not being passed - it was in email emergency
+added ability to comply with boxed folder on copy/paste
+hid file .file_explorer.stats.dbr
+
+
+v0.9.37 - 2008-02-12
+-------
+bug fixes but not sure if the dblclick/delete bug is fixed
+created create_thumb version 2.0 with true color capability
+
+
+v0.9.37 - 2007-12-23
+-------
+bug fix - create a new folder, then try to delete it or open it, you couldn't do it
+moved non-php js functions to the .js file
+
+
+
+v0.9.36 - 2007-12-10
+-------
+allowed cbFunction var to pass back file/folder to a function in opener
+mostly bug fixes other than that - allowed
+
+v0.9.35 - 2007-03-07
+-------
+fixed a few css issues, no more css errors showing
+made context menu work in Moz, also added a context menu for right-clicks in the scrolling div that contains the objects (in Windows this has New > Folder for example)
+added a callback mode as follows, call index.php with these parameters:
+	cb= select | saveas
+	cbTarget= id of the element you want to return the file(s) string to
+	cbTargetNode = id of the element you want to return file path to (e.g. images/prouducts/large)
+	cbMultiple = 1 | 0 - setting to zero means FE will only allow one item to be highlight selected and returned
+	folder = default folder you want FE to open in (must exist)
+
+v0.9.33 - 2007-02-13
+-------
+fixed the delete all folder bug
+
+v0.9.32 - 2006-10-05
+-------
+added ability to rename objects, and to create a folder (which sets the name untitled folder and then depends on rename), and to delete a folder - recursively.
+
+v0.9.31 - 2006-06-28
+--------
+added $hiddenObjects which is an array of name objects which will not be displayed - set default to hide .thumbs.dbr
+added Download Zip File option in context menu - works well for files only but see bugs
+
+v0.9.3
+--------
+added the ability to delete files (not folders), and to view images jpg,gif, and png by double-clicking or right click > open
+
+v0.9.1
+--------
+added functioning context menu

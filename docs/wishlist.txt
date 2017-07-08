@@ -1,0 +1,2 @@
+when an item is copied, a "copied objects" manager fades into view.  copy is stored in session but also you can control-copy.  Holding down the control-copy feature allows you to copy objects in multiple files - here we can get really complex but also very powerful.  Here we can paste or work with structure as well as objects.
+when moving or workign with these items I want a report on the intended actions and actions which were performed - some ability to step back into a process if a failure; and ability to bypass bad ops and notify of the problem

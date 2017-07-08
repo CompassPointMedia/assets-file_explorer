@@ -1,0 +1,94 @@
+2010-03-09
+----------
+* need image editor with at least crop, resize, and rotate, add tags would be nice
+* clicking over file NAME doesn't pull context menu
+* rotate images needs to happen
+* I can now create thumbnails of tiffs
+* need icon registry for file extensions in working order
+* hitting delete should delete the object
+
+
+
+
+
+2009-03-11
+----------
+onsubmit
+	DONE	if mode==uploadfile make sure bounding is sensible
+	KINDA	put an icon on the right that we're bounding; click to release it
+
+DONE	make bounding permanent
+name file as with jpg logic - blank out on submit
+
+
+
+
+2009-02-20
+----------
+* don't think I really need is_image() - just use getimagesize()
+is_boxed is not setting boxing parameters - finish this
+
+is haveThumb needed?
+with the new editing system, I must delete more files instances to clear, and move more file instances from system folder to system folder
+ability to view disk usage based on edits
+	first folders, then files in folders
+
+2008-02-12:
+-----------
+Need a permissions report for linux systems (presume this is based on Linux)
+Need a (!) alert when the permissions are not set right, w/link to help - how to fix
+
+
+2006-06-17: 
+------------
+DONE	1. got a proliferation going on with the html for the file objects - need a function to generate this - and a consistency between the entire list and a single list.
+DONE	1b. when I upload a new image, it needs to recalc the thumbnail
+FIXED	Bugs (see 1b. above - no js refresh showing, code not right)
+DONE	2. need to know how many, total file size for folder, and see the path plainly
+DONE	3. context menu in place sensibly
+DONE	4. first option must be to delete
+DONE	8. put "help" on the context menu
+5. implement the "back" and forward concept in session for the uid
+6. handle ghosting on system folders and allow for folders to be hidden
+	6b. NOTE!!!! I have hidden .thumbs.dbr but this is not yet fully thought out in terms of system folders, permissions, etc. etc.
+7. handle locking of folders, stored and read from .thumbs.dbr
+8. be able to surf to another folder while uploading a file
+
+9. refine the sending email emergency file
+
+TESTING: see if I can upload an image, view it, and then delete it, also making sure maxNode keeps up with several adds and deletes.
+
+
+cleaning up context menu to essential vars and functions
+----------------------------------------------------------
+window.onload=rb_onload;
+function rb_onkeypress(evt) - sets commands to the onkeypress
+AddOnloadCommand()
+AddOnkyepressCommand
+rb_onclick
+rb_onload
+
+2006-06-26:
+------------
+context menu -first overview
+I have these basic configs:
+1. single folder
+2. multiple folders
+3. single file
+4. multiple files
+	a. same type
+		1. all images
+		2. all text (.txt, .html, .php)
+		3. all structured (.csv)
+	b. different types
+5. mixed (files and folders)
+
+
+selection:
+2. clickable region is too large
+3. context menue working
+	a. contextually based on number and type of files selected
+	b. most important things are:
+		1. delete
+		2. download / view / get zip
+4. 
