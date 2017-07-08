@@ -1,0 +1,26 @@
+2009-02-15
+----------
+* download zip file causes a submitFail timeout alert - need to stop it before it starts
+
+2009-02-09
+----------
+* I'm still concerned about the security of renaming where I could use folder rename exclusions to hack in a name change to a malicious file extension
+* if the session mirror gets out of synch it should be caught (note 0400918), but out-of-synch only based on a case difference would go uncaught
+* in session mirror, [index] is indexed lowercase, but the [folders] node is actual binary of folder names - THIS MAY CAUSE FAILURES IN SOME PLACES
+
+2009-02-08
+----------
+uuploading file right now has no constraints or protection
+someone could hack the objectNameForm and put a file on someone else's site (but not a malicious one)
+
+
+2008-05-07
+----------
+the boxedfolder tag in .file_explorer.stats.dbr file is not being written properly
+ON RENAME OF A FOLDER, we would lose the boxing 'cause the boxedfolder tag is not changed
+timeouts are still a huge problem
+
+OLD
+---
+download zip file doesn't go into subfolders (and need option whether to or not)
+after I hid .thumbs.dbr. the folder stats are still showing "1 folder"
