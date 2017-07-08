@@ -42,7 +42,6 @@ if(!$_REQUEST['uid']){
 	$qs=preg_replace('/&*uid=/i','',$QUERY_STRING);
 	$qs.=($qs ? '&' : '').'uid='.$uid;
 	$location='index.php?'.$qs;
-	exit('fail');
 	?><script language="javascript" type="text/javascript">
 	window.location='<?php echo $location?>';
 	</script><?php
