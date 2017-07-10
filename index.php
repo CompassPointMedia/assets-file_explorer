@@ -17,12 +17,20 @@ set_test_env();
 
 //2017-07-04 - this is the simplest possible globalizer; _GET vars have precedence
 //extractor
+if(!function_exists('addslashes_deep')){
+    function addslashes_deep($value){
+        $value = is_array($value) ?
+            array_map('addslashes_deep', $value) :
+            addslashes($value);
+        return $value;
+    }
+}
 $extract = ['_POST'=>1, '_GET'=>1];
 foreach($extract as $_GROUP => $clean){
     if(empty($GLOBALS[$_GROUP])) continue;
     if($clean){
         foreach($GLOBALS[$_GROUP] as $n => $v){
-            $GLOBALS[$_GROUP][$n] = addslashes($v);
+            $GLOBALS[$_GROUP][$n] = addslashes_deep($v);
         }
     }
     extract($GLOBALS[$_GROUP]);
