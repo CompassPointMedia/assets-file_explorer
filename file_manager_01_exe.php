@@ -49,7 +49,7 @@ $localSys['buildNotes']='1.0.1 - major code cleanup';
 
 
 
-if(false && !$uid && !$__REQUEST__['uid'] && !($PHP_SELF=='/admin/file_explorer/file_manager_01_exe.php' && strlen($_REQUEST['uid']))){
+if(false && !$uid && !$__REQUEST__['uid'] && !($_SERVER['PHP_SELF']=='/admin/file_explorer/file_manager_01_exe.php' && strlen($_REQUEST['uid']))){
 	/** each index.php window needs a unique id (UID) **/
 	$uid=substr(md5(time().rand(1,25)),0,12);
 	ob_start();
