@@ -12,7 +12,7 @@ version 0.9.1
 2006-06-25: the navigation seems solid and the session object for the visible files looks good.  Next step will be some basic right-click options, then forward-back, then cut and paste. A next step will be displaying icons properly, and then having folders be ghosted or hidden.  
 
 2006-06-23: ability to hi2() folders and files, see todo list for the many things yet to complete
-Any questions or project requests please contact sam-git@compasspointmedia.com
+Any questions or project requests please contact sam-git@samuelfullman.com
 
 This started as an upload manager in the shopping cart module, 0.9 makes it generic for any folder.
 

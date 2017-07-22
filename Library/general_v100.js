@@ -367,7 +367,7 @@ function obj_newfolder(){
 	window.open('file_manager_01_exe.php?mode=newFolder&folder='+g('folder').value+'&currentFolder='+currentFolder+'&uid='+g('uid').value,'w1');
 }
 function gethelp_1(){
-	ow('http://dev.compasspointmedia.com/mediawiki-1.13.2/index.php?title=File_Explorer_Help','l2_help','width=600,height=500,scrollbars,resizable');
+	ow('http://dev.compasspoint-sw.com/mediawiki-1.13.2/index.php?title=File_Explorer_Help','l2_help','width=600,height=500,scrollbars,resizable');
 }
 function obj_preprename(){
 	for(i in hl_grp)idx=i;

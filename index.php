@@ -269,7 +269,7 @@ var boxMethod=<?php echo $boxMethod ? $boxMethod : ($boundingBoxWidth || $boundi
 				?></span>
 				&nbsp;&nbsp;
 				</div>
-				<div class="imgIcon" style="float:left;"><a href="http://dev.compasspointmedia.com/mediawiki-1.13.2/index.php?title=File_Explorer_Help" title="Get help using File Explorer!" target="FEXHelp"><img src="/images/i/fex104/i-help1.png" width="32" alt="help" align="absbottom" /></a></div>
+				<div class="imgIcon" style="float:left;"><a href="http://dev.compasspoint-sw.com/mediawiki-1.13.2/index.php?title=File_Explorer_Help" title="Get help using File Explorer!" target="FEXHelp"><img src="/images/i/fex104/i-help1.png" width="32" alt="help" align="absbottom" /></a></div>
 				
 				<div class="imgIcon" style="float:left;"><a href="leftnav.php?uid=<?php echo $uid?>" title="View all folders and navigate them" onClick="return ow(this.href,'l1_leftnav','700,700');">Nav</a></div>
 				

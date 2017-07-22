@@ -5,14 +5,14 @@ $relatebase=false;// this is a standalone object, set to true to integrate with 
 
 require(str_replace('docs/index.php','config.php',__FILE__));
 /****
-Compass Point Media PHP initial coding suite v1.0 - 2006-05-14 - for documentation see Compasspointmedia.com/help/codingsuites.php
+Compass Point Media PHP initial coding suite v1.0 - 2006-05-14 - for documentation see compasspoint-sw.com/help/codingsuites.php
 
 ****/
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- Compass Point Media XHTML1.0 Template, v1.0 - 2006-05-14 http://www.compasspointmedia.com -->
+<!-- Compass Point Media XHTML1.0 Template, v1.0 - 2006-05-14 http://www.compasspoint-sw.com -->
 <head>
 <title>File Explorer Help</title>
 <meta name="Description" content="File Explorer Help" />

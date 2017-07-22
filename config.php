@@ -103,8 +103,8 @@ if($set){
 
 $testModeA=false; //shows iframes in ctrl section
 
-$developerEmail='sam-git@compasspointmedia.com';
-$fromHdrBugs='From: file_explorer@relatebase.com';
+$developerEmail='sam-git@samuelfullman.com';
+$fromHdrBugs='From: file_explorer@compasspoint-sw.com';
 
 
 $fexSettings['yellowarea']=array(
