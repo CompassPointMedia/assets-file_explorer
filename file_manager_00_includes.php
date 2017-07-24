@@ -31,7 +31,7 @@ if(!function_exists('xml_read_tags'))
 if(!function_exists('attach_download'))
 	require($FUNCTION_ROOT.'/function_attach_download_v100.php');
 if(!function_exists('subkey_sort'))
-	require($FUNCTION_ROOT.'/function_array_subkey_sort_v203.php');
+	require($FUNCTION_ROOT.'/function_array_subkey_sort_v300.php');
 
 #from local functions folder
 #2009-01-22 removed	if(!function_exists('fs_dir_size'))
