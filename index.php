@@ -160,7 +160,6 @@ echo isset($customDocType) ? str_replace('xmlns="http://www.w3.org/1999/xhtml"',
 var feVersion='<?php echo $feVersion?>';
 var thispage = 'index.php';
 var thisfolder = '';
-var browser='<?php echo $browser?>';
 var ctime='<?php echo $ctime=time();?>';
 var cb = '<?php echo $cb?>';
 var cbTarget='<?php echo $cbTarget?>';

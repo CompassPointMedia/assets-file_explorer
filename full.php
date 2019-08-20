@@ -56,7 +56,6 @@ body{
 var feVersion='<?php echo $feVersion?>';
 var thispage = 'index.php';
 var thisfolder = '';
-var browser='<?php echo $browser?>';
 var ctime='<?php echo $ctime=time();?>';
 var folder ='<?php echo $folder?>';
 var cb = '<?php echo $cb?>';
